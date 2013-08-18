@@ -15,6 +15,7 @@ There is a tutorial for Firmata and Raspberry Pi in [The MagPi Issue 7](http://w
 * Select the serial port from the FTDI adapter under **Tools->Serial Port**.
 * Open the Firmata sketch under **File->Examples->Firmata->StandardFirmata**.
 * Upload the sktech to the RPi-ShieldBridge.
+  If there are upload problems then add a pull-down resistor (10k-47k Ohm) between **GPIO18** or **Jumper JBL** and GND.
 * Now exit the Arduino IDE and disconnect the FTDI adapter, because no more Arduino programming is needed.
 
 
@@ -33,6 +34,8 @@ The RPi-ShieldBridge can be connected via USB or UART:
   * [Disable log messages](http://elinux.org/RPi_Serial_Connection#Preventing_Linux_using_the_serial_port) to the UART of the Raspberry Pi.
   * Device name: */dev/ttyAMA0*
 
+Note: As default the reset pin of the Arduino is connected to GPIO18 of the Raspberry Pi (GPIO18 high = reset on, GPIO18 low = reset off).
+
 For controlling there are different ways possible:
 
 * **Python**
@@ -49,7 +52,11 @@ For controlling there are different ways possible:
         $ nano firmatatest.py
 
         import time
+        import RPi.GPIO as GPIO
         import pyfirmata
+        GPIO.setmode(GPIO.BOARD)
+        GPIO.setup(12, GPIO.OUT)   # GPIO18 output
+        GPIO.output(12, 0)         # GPIO18 low -> Arduino reset off
         board = pyfirmata.Arduino('/dev/ttyUSB0')
         board.digital[13].write(1) # switch on LED
         time.sleep(3)              # 3s delay
@@ -65,7 +72,7 @@ For controlling there are different ways possible:
         ```
 
 * **Node.js** (JavaScript)
-  * Install [Node](http://nodejs.org) and [Firmata library](https://npmjs.org/package/firmata):
+  * Install [Node](http://nodejs.org), [Firmata library](https://npmjs.org/package/firmata) and  [rpio library](https://npmjs.org/package/rpio):
 
         ```
         $ sudo mkdir /opt/node
@@ -76,8 +83,10 @@ For controlling there are different ways possible:
 
         #add these lines before *export PATH*
         PATH="$PATH:/opt/node/bin"
-        
+
         $ sudo /opt/node/bin/npm install -g firmata
+
+        $ sudo /opt/node/bin/npm install -g rpio
         ```
 
    * Create a test script named *firmatatest.js*:
@@ -85,7 +94,14 @@ For controlling there are different ways possible:
         ```
         $ nano firmatatest.js
 
+        var rpio = require('rpio');
         var firmata = require('firmata');
+
+        // GPIO18 low -> Arduino reset off
+        rpio.setOutput(12);
+        rpio.write(12, rpio.LOW);
+
+        // start connection to Arduino
         var board = new firmata.Board('/dev/ttyUSB0', function(err)
         {
           if(err)
@@ -109,5 +125,5 @@ For controlling there are different ways possible:
   * Run the script:
 
         ```
-        $ node firmatatest.js
+        $ sudo node firmatatest.js
         ```
