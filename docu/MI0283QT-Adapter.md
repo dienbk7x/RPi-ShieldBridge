@@ -1,8 +1,10 @@
 # MI0283QT-Adapter v1
+
 There exists a [Linux Framebuffer driver (fbtft)](https://github.com/notro/fbtft) for the display adapter with MI0283QT2 + MI0283QT9A display panel and the ADS7846 touch controller has already a Linux device driver.
 
 Here are some Links with further infos:
 * [MI0283QT9A + RPi-ShieldBridge](http://lallafa.de/blog/2013/07/watterotts-new-rpi-shieldbridge/)
+* [MI0283QT9A + RPi-ShieldBridge (German)](http://www.mdtweb.de/index.php/projekte/mikroprozessoren/raspberry-pi/rpi-lcd-ansteuerung)
 * [MI0283QT9A driver (flexfb)](http://lallafa.de/blog/2013/06/watterott-mi0283qt-9-display-with-generic-flexfb-driver/)
 * [MI0283QT9A driver](http://lallafa.de/blog/2013/03/watterott-mi0283qt-9a-display-for-the-rasbperry-pi/)
 * [MI0283QT2 driver](http://lallafa.de/blog/2013/03/watterott-display-on-raspberry-pi/)
