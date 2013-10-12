@@ -1,5 +1,7 @@
 # Arduino IDE on Raspberry Pi with RPi-ShieldBridge
 
+How to install the Arduino IDE on the Raspberry Pi to use with the RPi-ShieldBridge.
+
 * Close the Jumpers: **JTX**, **JRX** and **JBL** on the RPi-ShieldBridge.
 
 * Install the Arduino IDE:
