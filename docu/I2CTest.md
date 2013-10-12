@@ -20,8 +20,8 @@ void setup()
   digitalWrite(13, LOW);   // set pin 13 to low (0V)
 
   Wire.begin(ADDRESS);     // join I2C bus with respective address
-  Wire.onReceive(receive); // receive data
-  Wire.onRequest(request); // send data
+  Wire.onReceive(receive); // receive data function
+  Wire.onRequest(request); // send data function
 } 
 
 void loop() 

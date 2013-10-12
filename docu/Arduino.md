@@ -14,10 +14,12 @@
     ```
     $ wget https://raw.github.com/watterott/RPi-ShieldBridge/master/docu/autoreset
     $ wget https://raw.github.com/watterott/RPi-ShieldBridge/master/docu/avrdude-autoreset
-    $ cp autoreset /usr/bin
-    $ cp avrdude-autoreset /usr/bin
-    $ mv /usr/bin/avrdude /usr/bin/avrdude-original
-    $ ln -s /usr/bin/avrdude-autoreset /usr/bin/avrdude
+    $ chmod +x autoreset
+    $ chmod +x avrdude-autoreset
+    $ sudo cp autoreset /usr/bin
+    $ sudo cp avrdude-autoreset /usr/bin
+    $ sudo mv /usr/bin/avrdude /usr/bin/avrdude-original
+    $ sudo ln -s /usr/bin/avrdude-autoreset /usr/bin/avrdude
     ```
 
 * [Disable Linux serial console](http://elinux.org/RPi_Serial_Connection#Preventing_Linux_using_the_serial_port):
@@ -35,6 +37,14 @@
     Remove or comment the line ```T0:23:respawn:/sbin/getty -L ttyAMA0 115200 vt100```.
     
     Reboot the system.
+
+* Test AVRdude:
+
+    ```
+    $ sudo avrdude -c arduino -p m328p -P /dev/ttyAMA0 -b 57600 -v
+    ```
+
+    The device signature of the ATmega328p is *0x1e950f*.
 
 * Run the Arduino IDE.
 
