@@ -52,7 +52,15 @@ How to install the Arduino IDE on the Raspberry Pi to use with the RPi-ShieldBri
 
 * Select **Arduino Uno** under **Tools->Board**.
 
-* Select the hardware serial port */dev/ttyAMA0* under **Tools->Serial Port**.
+* Select the hardware serial port **/dev/ttyAMA0** under **Tools->Serial Port**.
+
+    If the hardware serial port is not recognized then create a symlink to the standard Linux serial port *ttyS0*:
+
+    ```
+    $ sudo nano /etc/udev/rules.d/80-arduinopi.rules
+
+    KERNEL=="ttyAMA0", SYMLINK+="ttyS0", GROUP="dialout", MODE:=0666
+    ```
 
 * Open the Blink Sketch under **File->Examples->01.Basics->Blink**.
 

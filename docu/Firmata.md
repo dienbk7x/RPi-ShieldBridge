@@ -25,7 +25,7 @@ There is a tutorial for Firmata and Raspberry Pi in [The MagPi Issue 7](http://w
   * [Install the Arduino IDE on the Raspberry Pi](https://github.com/watterott/RPi-ShieldBridge/blob/master/docu/Arduino.md).
   * Run the Arduino IDE.
   * Select **Arduino Uno** under **Tools->Board**.
-  * Select the hardware serial port */dev/ttyAMA0* under **Tools->Serial Port**.
+  * Select the hardware serial port **/dev/ttyAMA0** under **Tools->Serial Port**.
   * Open the Firmata Sketch under **File->Examples->Firmata->StandardFirmata**.
   * Upload the Sketch.
   * Now exit the Arduino IDE.
