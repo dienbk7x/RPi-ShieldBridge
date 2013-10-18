@@ -59,7 +59,7 @@ How to install the Arduino IDE on the Raspberry Pi to use with the RPi-ShieldBri
     ```
     $ sudo nano /etc/udev/rules.d/80-arduinopi.rules
 
-    KERNEL=="ttyAMA0", SYMLINK+="ttyS0", GROUP="dialout", MODE:=0666
+    KERNEL=="ttyAMA0", SYMLINK+="ttyS0",GROUP="dialout",MODE:=0666
     ```
 
 * Open the Blink Sketch under **File->Examples->01.Basics->Blink**.

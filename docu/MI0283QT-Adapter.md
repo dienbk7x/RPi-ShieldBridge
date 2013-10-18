@@ -9,17 +9,17 @@ There is a [Linux Framebuffer driver (FBTFT)](https://github.com/notro/fbtft/wik
 * Activate Framebuffer:
 
     ```
-    $ sudo modprobe fbtft_device name=mi0283qt-9a cs=0 rotate=1 speed=16000000
+    $ sudo modprobe fbtft_device name=mi0283qt-9a cs=0 gpios=reset:23,led:24 rotate=90 speed=16000000
     ```
     or
     ```
-    $ sudo modprobe fbtft_device name=mi0283qt-2 cs=0 rotate=1 speed=16000000
+    $ sudo modprobe fbtft_device name=mi0283qt-2 cs=0 gpios=cs:8,reset:23,led:24 rotate=90 speed=16000000
     ```
 
 * [Activate Touchpanel](https://github.com/notro/fbtft/wiki/Touchpanel#watterott-mi0283qt-9a):
 
     ```
-    $ sudo modprobe ads7846_test cs=1 speed=2000000 model=7846 swap_xy=1 pressure_max=255 x_min=250 x_max=3780 y_min=160 y_max=3930 x_plate_ohms=60 gpio_pendown=17 keep_vref_on=1
+    $ sudo modprobe ads7846_device cs=1 gpio_pendown=25 speed=2000000 model=7846 swap_xy=1 pressure_max=255 x_min=250 x_max=3780 y_min=160 y_max=3930 x_plate_ohms=60 keep_vref_on=1
     ```
     *Note: The Jumper JIRQ has to be closed.*
 
