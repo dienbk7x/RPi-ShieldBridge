@@ -99,3 +99,4 @@ LCD-SDA  SDA / GPIO2 (close Jumper JSDA)
 LCD-SCL  SCL / GPIO3 (close Jumper JSCL, open Jumper JIRQ)
 
 ```
+Note: The Raspberry Pi hardware revision 1 boards connect I2C bus 0 (GPIO 0 + 1) and revision 2 boards connect I2C bus 1 (GPIO 2 + 3) to the GPIO connector.
