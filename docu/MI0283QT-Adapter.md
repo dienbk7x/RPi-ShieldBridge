@@ -32,9 +32,8 @@ There is a [Linux Framebuffer driver (FBTFT)](https://github.com/notro/fbtft/wik
 * Enable for X-Windows:
 
     ```
-    $ FRAMEBUFFER=/dev/fb1 startx
-    $ export DISPLAY=:0
-    $ xinput --set-prop 'ADS7846 Touchscreen' 'Evdev Axis Inversion' 1 0
+    $ FRAMEBUFFER=/dev/fb1 startx & 
+    $ DISPLAY=:0 xinput --set-prop 'ADS7846 Touchscreen' 'Evdev Axis Inversion' 1 0
     ```
 
 * Enable for Console:
