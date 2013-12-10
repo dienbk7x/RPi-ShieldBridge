@@ -9,7 +9,7 @@ There is a [Linux Framebuffer driver (FBTFT)](https://github.com/notro/fbtft/wik
 * Install Touchscreen tools:
 
     ```
-    $ sudo apt-get install libts-bin evtest xinput
+    $ sudo apt-get install xinput evtest
     ```
 
 * [Activate Framebuffer](https://github.com/notro/fbtft/wiki#enable-driver):
@@ -19,7 +19,7 @@ There is a [Linux Framebuffer driver (FBTFT)](https://github.com/notro/fbtft/wik
     ```
     or
     ```
-    $ sudo modprobe fbtft_device name=mi0283qt-2 cs=0 gpios=cs:8,reset:23,led:24 rotate=90 speed=16000000
+    $ sudo modprobe fbtft_device name=mi0283qt-2 cs=0 gpios=reset:23,led:24 rotate=90 speed=16000000
     ```
 
 * [Activate Touchpanel](https://github.com/notro/fbtft/wiki/Touchpanel#watterott-mi0283qt-9a):
