@@ -6,7 +6,7 @@ There is a [Linux Framebuffer driver (FBTFT)](https://github.com/notro/fbtft/wik
 
 * [Install FBTFT](https://github.com/notro/fbtft/wiki#install) Framebuffer.
 
-* Install Touchscreen tools:
+* Install Touchscreen Tools:
 
     ```
     $ sudo apt-get install xinput evtest
@@ -29,11 +29,22 @@ There is a [Linux Framebuffer driver (FBTFT)](https://github.com/notro/fbtft/wik
     ```
     *Note: The Jumper JIRQ has to be closed.*
 
-* Enable for X-Windows:
+* Enable for X-Window-System:
 
     ```
     $ FRAMEBUFFER=/dev/fb1 startx & 
+    ```
+
+    *...wait till X-Window-System starts up...*
+
+    ```
     $ DISPLAY=:0 xinput --set-prop 'ADS7846 Touchscreen' 'Evdev Axis Inversion' 1 0
+    ```
+
+   *...to stop X-Window-System run:*
+
+    ```
+   $ sudo pkill x
     ```
 
 * Enable for Console:
@@ -46,24 +57,25 @@ There is a [Linux Framebuffer driver (FBTFT)](https://github.com/notro/fbtft/wik
 
 * [MI0283QT9A + RPi-ShieldBridge](http://lallafa.de/blog/2013/07/watterotts-new-rpi-shieldbridge/)
 * [MI0283QT9A + RPi-ShieldBridge (German)](http://www.mdtweb.de/index.php/projekte/mikroprozessoren/raspberry-pi/rpi-lcd-ansteuerung)
-* [MI0283QT9A driver (flexfb)](http://lallafa.de/blog/2013/06/watterott-mi0283qt-9-display-with-generic-flexfb-driver/)
-* [MI0283QT9A driver](http://lallafa.de/blog/2013/03/watterott-mi0283qt-9a-display-for-the-rasbperry-pi/)
-* [MI0283QT2 driver](http://lallafa.de/blog/2013/03/watterott-display-on-raspberry-pi/)
-* [ADS7846 touch controller driver](http://lallafa.de/blog/2013/03/adding-touch-support-for-the-mi0283qt-displays/)
+* [MI0283QT9A driver installation](http://www.raspberrypi.org/phpBB3/viewtopic.php?f=44&t=61992&p=460809)
+* [MI0283QT9A driver (flexfb) installation](http://lallafa.de/blog/2013/06/watterott-mi0283qt-9-display-with-generic-flexfb-driver/)
+* [MI0283QT9A driver installation](http://lallafa.de/blog/2013/03/watterott-mi0283qt-9a-display-for-the-rasbperry-pi/)
+* [MI0283QT2 driver installation](http://lallafa.de/blog/2013/03/watterott-display-on-raspberry-pi/)
+* [ADS7846 touch controller driver installation](http://lallafa.de/blog/2013/03/adding-touch-support-for-the-mi0283qt-displays/)
 
 ### Display Connection
 
 ```
 Display  Raspberry Pi
 ---------------------
-LCD-RST  GPIO23
 LCD-LED  GPIO24
-LCD-CS   CE0 / GPIO8 (on v1.0: CE1 / GPIO7)
-ADS-CS   CE1 / GPIO7 (on v1.0: CE0 / GPIO8)
+LCD-RST  GPIO23
+LCD-CS   GPIO8  (CE0) [on RPi-ShieldBridge v1.0: CE1]
+ADS-CS   GPIO7  (CE1) [on RPi-ShieldBridge v1.0: CE0]
 ADS-IRQ  GPIO25 (close Jumper JIRQ, open Jumper JSDA+JSCL)
-MISO     MISO / GPIO9
-MOSI     MOSI / GPIO10
-SCK      SCK  / GPIO11
+MISO     GPIO9  (MISO)
+MOSI     GPIO10 (MOSI)
+SCK      GPIO11 (SCK)
 ```
 
 
@@ -99,14 +111,14 @@ There is an experimental [Linux Framebuffer driver (fbtft)](https://github.com/n
 Display  Raspberry Pi
 ---------------------
 LCD-RST  GPIO23
-LCD-CS   CE0 / GPIO8 (on v1.0: CE1 / GPIO7)
+LCD-CS   GPIO8  (CE0) [on RPi-ShieldBridge v1.0: CE1]
  --- SPI/SSI ---
-MISO     MISO / GPIO9
-MOSI     MOSI / GPIO10
-SCK      SCK  / GPIO11
+MISO     GPIO9  (MISO)
+MOSI     GPIO10 (MOSI)
+SCK      GPIO11 (SCK)
  --- I2C ---
-LCD-SDA  SDA / GPIO2 (close Jumper JSDA)
-LCD-SCL  SCL / GPIO3 (close Jumper JSCL, open Jumper JIRQ)
+LCD-SDA  GPIO2  (SDA, close Jumper JSDA)
+LCD-SCL  GPIO3  (SCL, close Jumper JSCL, open Jumper JIRQ)
 ```
 
 Note: The Raspberry Pi hardware revision 1 boards connect I2C bus 0 (GPIO 0 + 1) and revision 2 boards connect I2C bus 1 (GPIO 2 + 3) to the GPIO connector.
