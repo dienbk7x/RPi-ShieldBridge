@@ -22,6 +22,11 @@ There is a [Linux Framebuffer driver (FBTFT)](https://github.com/notro/fbtft/wik
     $ sudo modprobe fbtft_device name=mi0283qt-2 cs=0 gpios=reset:23,led:24 rotate=90 speed=16000000
     ```
 
+    To make it permant (on Debian) add to the file ```/etc/modules``` the following line:
+    ```fbtft_device name=mi0283qt-9a cs=0 gpios=reset:23,led:24 rotate=90 speed=16000000```
+
+    *Note: For a higher speed than 16MHz the display has to be connected directly to the RPi-ShieldBridge or with wires not longer than 5cm.*
+
 * [Activate Touchpanel](https://github.com/notro/fbtft/wiki/Touchpanel#watterott-mi0283qt-9a):
 
     ```
