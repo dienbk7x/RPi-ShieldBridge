@@ -37,7 +37,6 @@ There is a [Linux Framebuffer driver (FBTFT)](https://github.com/notro/fbtft/wik
     To make it permanent (on Debian) add to the file ```/etc/modules``` the following line:
     ```ads7846_device model=7846 cs=1 gpio_pendown=25 speed=2000000 keep_vref_on=1 swap_xy=1 pressure_max=255 x_plate_ohms=60 x_min=250 x_max=3780 y_min=160 y_max=3930```
 
-
 * Enable for X-Window-System:
 
     ```
@@ -62,8 +61,7 @@ There is a [Linux Framebuffer driver (FBTFT)](https://github.com/notro/fbtft/wik
     $ con2fbmap 1 1
     ```
 
-    To make it permanent (on Debian) add to the file ```/boot/cmdline.txt``` the following kernel argument:
-    ```fbcon=map:10```
+    To make it permanent (on Debian) add to the file ```/boot/cmdline.txt``` the following kernel argument: ```fbcon=map:10```
 
 
 ### Further Infos/Tutorials
@@ -125,8 +123,7 @@ There is an experimental [Linux Framebuffer driver (fbtft)](https://github.com/n
     $ con2fbmap 1 1
     ```
 
-    To make it permanent (on Debian) add to the file ```/boot/cmdline.txt``` the following kernel argument:
-    ```fbcon=map:10```
+    To make it permanent (on Debian) add to the file ```/boot/cmdline.txt``` the following kernel argument: ```fbcon=map:10```
 
 
 ### Display Connection
