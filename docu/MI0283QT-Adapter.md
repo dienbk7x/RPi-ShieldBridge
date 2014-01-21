@@ -61,7 +61,7 @@ There is a [Linux Framebuffer driver (FBTFT)](https://github.com/notro/fbtft/wik
     $ con2fbmap 1 1
     ```
 
-    To make it permanent (on Debian) add to the file ```/boot/cmdline.txt``` the following kernel argument: ```fbcon=map:10```
+    To make it permanent (on Debian) add to the file ```/boot/cmdline.txt``` the following kernel argument: ```fbcon=map:11 fbcon=font:VGA8x8```
 
 
 ### Further Infos/Tutorials
@@ -123,7 +123,7 @@ There is an experimental [Linux Framebuffer driver (fbtft)](https://github.com/n
     $ con2fbmap 1 1
     ```
 
-    To make it permanent (on Debian) add to the file ```/boot/cmdline.txt``` the following kernel argument: ```fbcon=map:10```
+    To make it permanent (on Debian) add to the file ```/boot/cmdline.txt``` the following kernel argument: ```fbcon=map:11 fbcon=font:VGA8x8```
 
 
 ### Display Connection
