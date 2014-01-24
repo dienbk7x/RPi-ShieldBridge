@@ -6,6 +6,23 @@ There is a [Linux Framebuffer driver (FBTFT)](https://github.com/notro/fbtft/wik
 
 * [Install FBTFT](https://github.com/notro/fbtft/wiki#install) Framebuffer.
 
+    Install rpi-update for the kernel update:
+    ```
+    $ sudo wget https://raw.github.com/Hexxeh/rpi-update/master/rpi-update -O /usr/bin/rpi-update
+    $ sudo chmod +x /usr/bin/rpi-update
+    ```
+
+    Remove or comment out the spi blacklist line (spi-bcm2708):
+    ```
+    $ sudo nano /etc/modprobe.d/raspi-blacklist.conf
+    ```
+
+    Install FBTFT:
+    ```
+    $ sudo REPO_URI=https://github.com/notro/rpi-firmware rpi-update
+    $ sudo shutdown -r now
+    ```
+
 * Install Touchscreen Tools:
 
     ```
@@ -23,7 +40,9 @@ There is a [Linux Framebuffer driver (FBTFT)](https://github.com/notro/fbtft/wik
     ```
 
     To make it permanent (on Debian) add to the file ```/etc/modules``` the following line:
-    ```fbtft_device name=mi0283qt-9a cs=0 gpios=reset:23,led:24 rotate=90 speed=16000000```
+    ```
+    fbtft_device name=mi0283qt-9a cs=0 gpios=reset:23,led:24 rotate=90 speed=16000000
+    ```
 
     *Note: For a higher speed than 16MHz the display has to be connected directly to the RPi-ShieldBridge or with wires not longer than 5cm.*
 
@@ -35,7 +54,9 @@ There is a [Linux Framebuffer driver (FBTFT)](https://github.com/notro/fbtft/wik
     *Note: The Jumper JIRQ has to be closed.*
 
     To make it permanent (on Debian) add to the file ```/etc/modules``` the following line:
-    ```ads7846_device model=7846 cs=1 gpio_pendown=25 speed=2000000 keep_vref_on=1 swap_xy=1 pressure_max=255 x_plate_ohms=60 x_min=250 x_max=3780 y_min=160 y_max=3930```
+    ```
+    ads7846_device model=7846 cs=1 gpio_pendown=25 speed=2000000 keep_vref_on=1 swap_xy=1 pressure_max=255 x_plate_ohms=60 x_min=250 x_max=3780 y_min=160 y_max=3930
+    ```
 
 * Enable for X-Window-System:
 
