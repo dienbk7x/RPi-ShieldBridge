@@ -84,6 +84,8 @@ There is a [Linux Framebuffer driver (FBTFT)](https://github.com/notro/fbtft/wik
     $ sudo pkill x
     ```
 
+    To make it permanent (on Debian) see [autostart x](https://github.com/notro/fbtft/wiki#wiki-make-it-permanent-debian) and [xinput axis inversion](https://github.com/notro/fbtft/wiki/Touchpanel#wiki--xinput---make-it-permanent).
+
 * Video Test:
 
     ```
@@ -136,6 +138,14 @@ There is an experimental [Linux Framebuffer driver (fbtft)](https://github.com/n
     $ sudo modprobe fbtft_device name=mi0283qt-v2 cs=0 rotate=1
     ```
 
+* Enable for Console:
+
+    ```
+    $ con2fbmap 1 1
+    ```
+
+    To make it permanent (on Debian) add to the file ```/boot/cmdline.txt``` the following kernel argument: ```fbcon=map:11 fbcon=font:VGA8x8```
+
 * Enable for X Windows:
 
     ```
@@ -147,14 +157,6 @@ There is an experimental [Linux Framebuffer driver (fbtft)](https://github.com/n
     ```
     $ sudo pkill x
     ```
-
-* Enable for Console:
-
-    ```
-    $ con2fbmap 1 1
-    ```
-
-    To make it permanent (on Debian) add to the file ```/boot/cmdline.txt``` the following kernel argument: ```fbcon=map:11 fbcon=font:VGA8x8```
 
 
 ### Display Connection
