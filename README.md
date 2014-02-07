@@ -13,12 +13,13 @@ Shop: [RPi-ShieldBridge](http://www.watterott.com/en/RPi-ShieldBridge)
 * Shield connectors with Arduino Uno R3 layout
 * Additional 3.3V LDO voltage regulator for Arduino Shields
 * Prototyping Area
-* Optional MI0283QT-Adapter (2.8" 240x320 Display with Touchscreen/Touchpanel)
+* Optional MI0283QT-Adapter (2.8" 320x240 Display with Touchscreen/Touchpanel)
 * Optional 3-11V power input for Raspberry Pi and ShieldBridge (Pololu S7V7F5)
 
 
 ## Hardware
-![RPi-ShieldBridge hardware dia](https://raw.github.com/watterott/RPi-ShieldBridge/master/img/hw_dia.png)
+* ![RPi-ShieldBridge hardware dia](https://raw.github.com/watterott/RPi-ShieldBridge/master/img/hw_dia.png)
+* [Schematics + Layout](https://github.com/watterott/RPi-ShieldBridge/tree/master/pcb)
 
 
 ## Software
