@@ -32,16 +32,16 @@ There is a [Linux Framebuffer driver (FBTFT)](https://github.com/notro/fbtft/wik
 * [Activate Framebuffer](https://github.com/notro/fbtft/wiki#wiki-enable-driver):
 
     ```
-    $ sudo modprobe fbtft_device name=mi0283qt-9a cs=0 gpios=reset:23,led:24 rotate=90 speed=16000000
+    $ sudo modprobe fbtft_device name=mi0283qt-9a cs=0 gpios=reset:23,led:24 speed=16000000 rotate=270
     ```
     or for the older display adapters
     ```
-    $ sudo modprobe fbtft_device name=mi0283qt-2 cs=0 gpios=reset:23,led:24 rotate=90 speed=16000000
+    $ sudo modprobe fbtft_device name=mi0283qt-2 cs=0 gpios=reset:23,led:24 speed=16000000 rotate=270
     ```
 
     To make it permanent (on Debian) add to the file ```/etc/modules``` the following line:
     ```
-    fbtft_device name=mi0283qt-9a cs=0 gpios=reset:23,led:24 rotate=90 speed=16000000
+    fbtft_device name=mi0283qt-9a cs=0 gpios=reset:23,led:24 speed=16000000 rotate=270
     ```
 
     *Note: For a higher speed than 16MHz the display has to be connected directly to the RPi-ShieldBridge or with wires not longer than 5cm.*
@@ -88,13 +88,23 @@ There is a [Linux Framebuffer driver (FBTFT)](https://github.com/notro/fbtft/wik
 
 * Video Test:
 
+    *Note: The video file is about 60MB big.*
+    ```
+    $ wget http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4
+    ```
+
+    Play with **mplayer**:
     ```
     $ sudo apt-get install mplayer
-    $ wget http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4
     $ mplayer -vo fbdev2:/dev/fb1 -vf scale=320:-3 BigBuckBunny_320x180.mp4
     ```
 
-    *Note: The video file is about 60MB big.*
+    Play with **omxplayer** (*fbcp* for framebuffer mirroring required):
+    ```
+    $ fbcp &
+    $ omxplayer BigBuckBunny_320x180.mp4
+    $ killall fbcp
+    ```
 
 
 ### Further Infos/Tutorials
