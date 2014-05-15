@@ -2,7 +2,13 @@
 
 There is a [Linux Framebuffer driver (FBTFT)](https://github.com/notro/fbtft/wiki) available for the display adapter with MI0283QT-2 (HX8347D) + MI0283QT-9 / -11 (ILI9341) display panel and the ADS7846 / TSC2046 touch controller has also a Linux device driver.
 
-## Installation
+## SD-Card Image
+
+It is possible to use the ready to run SD-Card image for the RPi-Display with modified kernel parameters (cmdline.txt).
+* [RPi-Display SD-Card Image](https://github.com/watterott/RPi-Display#sd-card-image)
+* [cmdline.txt for RPi-ShieldBridge+MI0283QT-Adapter](https://raw.githubusercontent.com/watterott/RPi-Display/master/src/cmdline_9bit_sb.txt)
+
+## Linux Driver Installation
 
 * [Install FBTFT](https://github.com/notro/fbtft/wiki#install) Framebuffer:
 
@@ -138,7 +144,7 @@ SCK      GPIO11 (SCK)
 
 There is an experimental [Linux Framebuffer driver (fbtft)](https://github.com/notro/fbtft/wiki) available for the display adapter v2 with ARM controller.
 
-## Installation
+## Linux Driver Installation
 
 * [Install FBTFT](https://github.com/notro/fbtft/wiki#install) Framebuffer:
 
