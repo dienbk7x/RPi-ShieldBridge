@@ -6,7 +6,7 @@ There is a [Linux Framebuffer driver (FBTFT)](http://fbtft.org) available for th
 
 It is possible to use the ready to run SD-Card image for the RPi-Display with modified kernel parameters (cmdline.txt).
 * [RPi-Display SD-Card Image](https://github.com/watterott/RPi-Display#sd-card-image)
-* [cmdline.txt for RPi-ShieldBridge+MI0283QT-Adapter](https://raw.githubusercontent.com/watterott/RPi-Display/master/src/cmdline_9bit_sb.txt)
+* [cmdline.txt for RPi-ShieldBridge+MI0283QT-Adapter](https://raw.githubusercontent.com/watterott/RPi-Display/master/docu/cmdline_9bit_sb.txt)
 
 ## Linux Driver Installation
 
@@ -19,7 +19,7 @@ It is possible to use the ready to run SD-Card image for the RPi-Display with mo
     ```
     *If you get a certificate error, then start ```wget``` with ```--no-check-certificate```.*
 
-    Remove or comment out the SPI blacklist line (spi-bcm2708):
+    Remove or comment out the SPI blacklist line (**spi-bcm2708**):
     ```
     $ sudo nano /etc/modprobe.d/raspi-blacklist.conf
     ```
@@ -33,7 +33,7 @@ It is possible to use the ready to run SD-Card image for the RPi-Display with mo
 * Install Touchscreen Tools:
 
     ```
-    $ sudo apt-get install xinput evtest libts-bin
+    $ sudo apt-get install xinput
     ```
 
 * [Activate Framebuffer](https://github.com/notro/fbtft/wiki#enable-driver):
@@ -66,6 +66,21 @@ It is possible to use the ready to run SD-Card image for the RPi-Display with mo
     ```
 
     *Optional a calibration can be done with xinput_calibrator and ts_calibrate for better accuracy.*
+
+* Calibrate Touchpanel (optional):
+
+    For better accuracy a touchpanel calibration can be done with:
+
+    **[xinput_calibrator](https://github.com/tias/xinput_calibrator)**
+    ```
+    $ sudo FRAMEBUFFER=/dev/fb1 xinput_calibrator &
+    $ DISPLAY=:0 xinput --set-prop 'ADS7846 Touchscreen' 'Evdev Axis Inversion' 1 0
+    ```
+
+    **ts_calibrate**
+    ```
+    $ sudo apt-get install libts-bin
+    $ sudo TSLIB_FBDEVICE=/dev/fb1 TSLIB_TSDEVICE=/dev/input/event0 ts_calibrate
 
 * Enable for Console:
 
