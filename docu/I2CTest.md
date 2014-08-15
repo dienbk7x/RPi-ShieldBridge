@@ -91,8 +91,8 @@ void request() // function that runs when data is requested
     Or if you have installed [WiringPi](http://wiringpi.com/):
 
     ```
-    gpio -g mode 18 out
-    gpio -g write 18 1
+    $ gpio -g mode 18 out
+    $ gpio -g write 18 1
     ```
 
 ### Shell
