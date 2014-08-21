@@ -310,6 +310,7 @@
 <vertex x="25.4" y="57.15"/>
 <vertex x="1.27" y="56.8325"/>
 </polygon>
+<text x="0" y="-1.27" size="1.27" layer="49" font="vector" ratio="10" align="top-left">Silkscreen: 21 tPlace + 25 tNames + 22 bPlace</text>
 </plain>
 <libraries>
 <library name="Arduino">
