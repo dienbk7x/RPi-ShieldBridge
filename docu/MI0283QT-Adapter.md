@@ -30,7 +30,7 @@ It is possible to use the ready to run SD-Card image for the RPi-Display with mo
     ```
     *On compatibility errors run rpi-update as follows: ```sudo -E RPI_UPDATE_UNSUPPORTED=0 REPO_URI=https://github.com/notro/rpi-firmware rpi-update```*
 
-    *If FBTFT is not working correctly, then try the kernel without built-in FBTFT drivers: ```sudo REPO_URI=https://github.com/notro/rpi-firmware BRANCH=builtin rpi-update```*
+    *If FBTFT is not working correctly, then try the kernel with built-in FBTFT drivers: ```sudo REPO_URI=https://github.com/notro/rpi-firmware BRANCH=builtin rpi-update```*
 
     Reboot the system:
     ```
@@ -190,7 +190,7 @@ There is an experimental [Linux Framebuffer driver (fbtft)](https://github.com/n
     ```
     *On compatibility errors run rpi-update as follows: ```sudo -E RPI_UPDATE_UNSUPPORTED=0 REPO_URI=https://github.com/notro/rpi-firmware rpi-update```*
 
-    *If FBTFT is not working correctly, then try the kernel without built-in FBTFT drivers: ```sudo REPO_URI=https://github.com/notro/rpi-firmware BRANCH=builtin rpi-update```*
+    *If FBTFT is not working correctly, then try the kernel with built-in FBTFT drivers: ```sudo REPO_URI=https://github.com/notro/rpi-firmware BRANCH=builtin rpi-update```*
 
     Reboot the system:
     ```
@@ -202,18 +202,18 @@ There is an experimental [Linux Framebuffer driver (fbtft)](https://github.com/n
     * FBTFT modules
 
         ```
-        $ sudo modprobe fbtft_device name=mi0283qt-v2 cs=0 rotate=270
+        $ sudo modprobe fbtft_device name=mi0283qt-v2 cs=0 gpios=reset:23 rotate=270
         ```
 
         To make it permanent (on Debian) add to the file ```/etc/modules``` the following line:
         ```
-        fbtft_device name=mi0283qt-v2 cs=0 rotate=270
+        fbtft_device name=mi0283qt-v2 cs=0 gpios=reset:23 rotate=270
         ```
 
     * FBTFT compiled into kernel ```BRANCH=builtin```
 
         Kernel argument (/boot/cmdline.txt):
-        ```fbtft_device.name=mi0283qt-v2 fbtft_device.rotate=270```
+        ```fbtft_device.name=mi0283qt-v2 fbtft_device.gpios=reset:23 fbtft_device.rotate=270```
         *(Replace existing fbtft parameters with the new ones and make sure everything is in one line.)*
 
 * Enable for Console:
