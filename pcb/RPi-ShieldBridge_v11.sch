@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -14477,7 +14477,8 @@ Source: www.kingbright.com</description>
 </deviceset>
 </devicesets>
 </library>
-<library name="frames">
+<library name="we-symbol">
+<description>Symbols, Logos...</description>
 <packages>
 </packages>
 <symbols>
@@ -14498,17 +14499,17 @@ Source: www.kingbright.com</description>
 <wire x1="215.265" y1="13.97" x2="215.265" y2="19.05" width="0.1016" layer="94"/>
 <wire x1="215.265" y1="19.05" x2="256.54" y2="19.05" width="0.1016" layer="94"/>
 <wire x1="215.265" y1="19.05" x2="215.265" y2="24.13" width="0.1016" layer="94"/>
-<text x="217.17" y="15.24" size="2.54" layer="94" font="vector">&gt;DRAWING_NAME</text>
-<text x="217.17" y="10.16" size="2.286" layer="94" font="vector">&gt;LAST_DATE_TIME</text>
-<text x="230.505" y="5.08" size="2.54" layer="94" font="vector">&gt;SHEET</text>
-<text x="216.916" y="4.953" size="2.54" layer="94" font="vector">Sheet:</text>
 <frame x1="0" y1="0" x2="260.35" y2="179.07" columns="6" rows="4" layer="94"/>
+<text x="217.17" y="15.24" size="2.032" layer="94" font="vector">&gt;DRAWING_NAME</text>
+<text x="217.17" y="10.16" size="2.032" layer="94" font="vector">&gt;LAST_DATE_TIME</text>
+<text x="230.505" y="5.08" size="2.54" layer="94" font="vector">&gt;SHEET</text>
+<text x="217.17" y="5.08" size="2.54" layer="94" font="vector">Sheet:</text>
+<text x="217.17" y="20.32" size="2.032" layer="94" font="vector">www.watterott.com</text>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="A4L-LOC" prefix="FRAME" uservalue="yes">
-<description>&lt;b&gt;FRAME&lt;/b&gt;&lt;p&gt;
-DIN A4, landscape with location and doc. field</description>
+<deviceset name="FRAME-A4L" prefix="FRAME" uservalue="yes">
+<description>Frame: DIN A4 Landscape</description>
 <gates>
 <gate name="G$1" symbol="A4L-LOC" x="0" y="0"/>
 </gates>
@@ -14620,7 +14621,6 @@ DIN A4, landscape with location and doc. field</description>
 <part name="X4" library="SMD" deviceset="PASSER" device=""/>
 <part name="U$1" library="welectronic" deviceset="WE-LOGO" device="PLACE" value="WE-LOGO"/>
 <part name="LOGO1" library="OSHW" deviceset="OSHW_LOGO_6MIL" device="X0150-NT"/>
-<part name="FRAME1" library="frames" deviceset="A4L-LOC" device=""/>
 <part name="JBL" library="jumper" deviceset="SJ" device=""/>
 <part name="T5" library="IRF-sot23" deviceset="IRLML2502" device="" value="BSS138"/>
 <part name="GND13" library="supply1" deviceset="GND" device=""/>
@@ -14628,6 +14628,7 @@ DIN A4, landscape with location and doc. field</description>
 <part name="-" library="wirepad" deviceset="WIREPAD" device="2,54/1,0"/>
 <part name="CX" library="rcl" deviceset="C-EU" device="C0603" value="1k"/>
 <part name="C4" library="rcl" deviceset="C-EU" device="C0603" value="1uF"/>
+<part name="FRAME1" library="we-symbol" deviceset="FRAME-A4L" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -14654,9 +14655,9 @@ DIN A4, landscape with location and doc. field</description>
 <text x="38.1" y="167.64" size="3.81" layer="250">Arduino Connectors</text>
 <text x="104.14" y="6.985" size="1.27" layer="94" rot="R90">Pololu S7V7F5</text>
 <text x="171.45" y="64.77" size="3.81" layer="250">Level-Shifter</text>
-<text x="161.29" y="31.75" size="1.27" layer="95">Released under the Creative Commons Attribution Share-Alike License</text>
-<text x="161.29" y="29.21" size="1.27" layer="95">http://creativecommons.org/licenses/by-sa/4.0/</text>
-<text x="161.29" y="25.4" size="1.27" layer="95">Designed by Andreas Watterott (Watterott electronic)</text>
+<text x="162.56" y="21.59" size="1.27" layer="95">Released under the Creative Commons Attribution Share-Alike License</text>
+<text x="162.56" y="19.05" size="1.27" layer="95">http://creativecommons.org/licenses/by-sa/4.0/</text>
+<text x="162.56" y="15.24" size="1.27" layer="95">Designed by Andreas Watterott (Watterott electronic)</text>
 <text x="212.09" y="162.56" size="1.778" layer="250">Close these Jumpers for</text>
 <text x="212.09" y="160.02" size="1.778" layer="250">Arduino programming with RPi</text>
 <text x="180.34" y="76.2" size="1.778" layer="250">Close Jumper for ADS7846</text>
@@ -14922,17 +14923,12 @@ DIN A4, landscape with location and doc. field</description>
 <attribute name="NAME" x="18.415" y="155.575" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="19.177" y="151.638" size="1.778" layer="96"/>
 </instance>
-<instance part="X1" gate="G$1" x="167.64" y="17.78"/>
-<instance part="X2" gate="G$1" x="175.26" y="17.78"/>
-<instance part="X3" gate="G$1" x="182.88" y="17.78"/>
-<instance part="X4" gate="G$1" x="190.5" y="17.78"/>
-<instance part="U$1" gate="G$1" x="203.2" y="17.78"/>
-<instance part="LOGO1" gate="G$1" x="203.2" y="10.16"/>
-<instance part="FRAME1" gate="G$1" x="0" y="0" smashed="yes">
-<attribute name="DRAWING_NAME" x="217.17" y="15.24" size="2.54" layer="94" font="vector"/>
-<attribute name="LAST_DATE_TIME" x="217.17" y="10.16" size="2.286" layer="94" font="vector"/>
-<attribute name="SHEET" x="230.505" y="5.08" size="2.54" layer="94" font="vector"/>
-</instance>
+<instance part="X1" gate="G$1" x="165.1" y="7.62" smashed="yes"/>
+<instance part="X2" gate="G$1" x="170.18" y="7.62" smashed="yes"/>
+<instance part="X3" gate="G$1" x="175.26" y="7.62" smashed="yes"/>
+<instance part="X4" gate="G$1" x="180.34" y="7.62" smashed="yes"/>
+<instance part="U$1" gate="G$1" x="208.28" y="7.62"/>
+<instance part="LOGO1" gate="G$1" x="198.12" y="7.62"/>
 <instance part="JBL" gate="1" x="213.36" y="144.78" smashed="yes" rot="MR0">
 <attribute name="NAME" x="215.9" y="146.05" size="1.778" layer="95" rot="MR0"/>
 <attribute name="VALUE" x="215.9" y="140.97" size="1.778" layer="96" rot="MR0"/>
@@ -14958,6 +14954,7 @@ DIN A4, landscape with location and doc. field</description>
 <attribute name="NAME" x="72.644" y="14.478" size="1.778" layer="95"/>
 <attribute name="VALUE" x="72.39" y="11.938" size="1.778" layer="96"/>
 </instance>
+<instance part="FRAME1" gate="G$1" x="0" y="0"/>
 </instances>
 <busses>
 </busses>
