@@ -72,7 +72,7 @@ It is possible to use the ready to run SD-Card image for the RPi-Display with mo
     ```
     $ sudo modprobe ads7846_device model=7846 cs=1 gpio_pendown=25 speed=2000000 keep_vref_on=1 swap_xy=1 pressure_max=255 x_plate_ohms=60 x_min=200 x_max=3900 y_min=200 y_max=3900
     ```
-    *Note: The Jumper JIRQ has to be closed.*
+    *Note: The Jumper JIRQ on the RPi-ShieldBridge has to be closed.*
 
     To make it permanent (on Debian) add to the file ```/etc/modules``` the following line:
     ```
