@@ -18,8 +18,8 @@ How to install the Arduino IDE on the Raspberry Pi to use with the RPi-ShieldBri
     $ wget https://raw.github.com/watterott/RPi-ShieldBridge/master/docu/avrdude-autoreset
     $ chmod +x autoreset
     $ chmod +x avrdude-autoreset
-    $ sudo cp autoreset /usr/bin
-    $ sudo cp avrdude-autoreset /usr/bin
+    $ sudo mv autoreset /usr/bin
+    $ sudo mv avrdude-autoreset /usr/bin
     $ sudo mv /usr/bin/avrdude /usr/bin/avrdude-original
     $ sudo ln -s /usr/bin/avrdude-autoreset /usr/bin/avrdude
     ```
@@ -29,16 +29,17 @@ How to install the Arduino IDE on the Raspberry Pi to use with the RPi-ShieldBri
     ```
     $ sudo nano /boot/cmdline.txt
     ```
-
     Remove references to ```console=ttyAMA0,115200``` and ```kgdboc=ttyAMA0,115200```.
 
     ```
     $ sudo nano /etc/inittab
     ```
-
     Remove or comment the line ```T0:23:respawn:/sbin/getty -L ttyAMA0 115200 vt100```.
     
-    Reboot the system.
+    Reboot the system:
+    ```
+    $ sudo reboot
+    ```
 
 * Test AVRdude:
 
@@ -46,7 +47,7 @@ How to install the Arduino IDE on the Raspberry Pi to use with the RPi-ShieldBri
     $ sudo avrdude -c arduino -p m328p -P /dev/ttyAMA0 -b 57600 -v
     ```
 
-    The device signature of the ATmega328p is *0x1e950f*.
+    The device signature of the ATmega328 is *0x1e950f*.
 
 * Run the Arduino IDE.
 
@@ -64,6 +65,6 @@ How to install the Arduino IDE on the Raspberry Pi to use with the RPi-ShieldBri
 
 * Open the Blink Sketch under **File->Examples->01.Basics->Blink**.
 
-* Upload the Sketch.
+* Start build and upload: **File->Upload**.
 
 * The LED on the RPi-ShieldBridge will start to blink after the upload is finished.

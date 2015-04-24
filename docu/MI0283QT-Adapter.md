@@ -4,8 +4,8 @@ There is a [Linux Framebuffer driver (FBTFT)](https://github.com/notro/fbtft) av
 
 An installation guide can be found [here](https://github.com/watterott/RPi-Display/blob/master/docu/FBTFT-Install.md).
 
-It is also possible to use the ready to run [SD-Card image for the RPi-Display](https://github.com/watterott/RPi-Display) with modified kernel parameters (/boot/cmdline.txt).
-The respective parameters can be found in the installation guide under *FBTFT compiled into Kernel*.
+It is also possible to use the ready to run [SD-Card image for the RPi-Display](https://github.com/watterott/RPi-Display) with modified parameters.
+The respective parameters can be found in the installation guide under *FBTFT Kernel Modules*.
 
 **Further Infos/Tutorials**
 * [MI0283QT9 + RPi-ShieldBridge](http://lallafa.de/blog/2013/07/watterotts-new-rpi-shieldbridge/)
@@ -37,8 +37,8 @@ There is an experimental [Linux Framebuffer driver (fbtft)](https://github.com/n
 
 An installation guide can be found [here](https://github.com/watterott/RPi-Display/blob/master/docu/FBTFT-Install.md).
 
-It is also possible to use the ready to run [SD-Card image for the RPi-Display](https://github.com/watterott/RPi-Display) with modified kernel parameters (/boot/cmdline.txt).
-The respective parameters can be found in the installation guide under *FBTFT compiled into Kernel*.
+It is also possible to use the ready to run [SD-Card image for the RPi-Display](https://github.com/watterott/RPi-Display) with modified parameters.
+The respective parameters can be found in the installation guide under *FBTFT Kernel Modules*.
 
 **Display Connection**
 ```

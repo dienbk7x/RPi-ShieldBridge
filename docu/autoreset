@@ -14,7 +14,7 @@ start = time.time()
 def reset():
   GPIO.setup(12, GPIO.OUT) # 12 = GPIO18
   GPIO.output(12, GPIO.HIGH)
-  time.sleep(0.12)
+  time.sleep(0.10)
   GPIO.output(12, GPIO.LOW)
 
 def process():

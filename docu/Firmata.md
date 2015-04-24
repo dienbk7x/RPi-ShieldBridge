@@ -8,15 +8,15 @@ There is a tutorial for Firmata and Raspberry Pi in [The MagPi Issue 7](http://w
 
 ## Prepare Arduino / RPi-ShieldBridge
 
-* **Sketch upload with FTDI adapter**
+* **Sketch upload with USB FTDI adapter**
   * Download and install the [Arduino IDE](http://arduino.cc/en/Main/Software) on your computer or [Raspberry Pi](https://github.com/watterott/RPi-ShieldBridge/blob/master/docu/Arduino.md).
   * Close the **JVCC Jumper** next to the FTDI connector to power the RPi-ShieldBridge from the FTDI adapter or put it on a Raspberry Pi for powering. 
   * Connect the RPi-ShieldBridge with a FTDI adapter (5V) to the computer or Raspberry Pi.
-  * Run the Arduino IDE.
+  * Start the Arduino IDE.
   * Select **Arduino Uno** under **Tools->Board**.
-  * Select the serial port from the FTDI adapter under **Tools->Serial Port**.
+  * Choose the serial port from the FTDI adapter under **Tools->Serial Port**.
   * Open the Firmata Sketch under **File->Examples->Firmata->StandardFirmata**.
-  * Upload the Sketch.
+  * Start build and upload: **File->Upload**.
     If there are upload problems then add a pull-down resistor (10k-47k Ohm) between **GPIO18** or **Jumper JBL** and GND.
   * Now exit the Arduino IDE.
 
@@ -71,7 +71,7 @@ The RPi-ShieldBridge can be connected via USB or UART:
     # start connection to Arduino
     #  USB: /dev/ttyUSB0 or /dev/ttyACM0
     #  UART: /dev/ttyAMA0
-    board = pyfirmata.Arduino('/dev/ttyUSB0')
+    board = pyfirmata.Arduino('/dev/ttyAMA0')
     board.digital[13].write(1) # switch on LED
     time.sleep(3)              # 3s delay
     board.digital[13].write(0) # switch off LED
@@ -88,22 +88,15 @@ The RPi-ShieldBridge can be connected via USB or UART:
 
 ## Controlling with Node.js (JavaScript)
 
-* Install [Node](http://nodejs.org), [Firmata library](https://npmjs.org/package/firmata) and  [rpio library](https://npmjs.org/package/rpio):
+* Install [Node](http://elinux.org/Node.js_on_RPi), [Firmata library](https://npmjs.org/package/firmata) and [rpio library](https://npmjs.org/package/rpio):
 
     ```
-    $ sudo mkdir /opt/node
-    $ wget http://nodejs.org/dist/v0.10.12/node-v0.10.12-linux-arm-pi.tar.gz
-    $ tar zxf node-v0.10.12-linux-arm-pi.tar.gz
-    $ sudo cp -r node-v0.10.12-linux-arm-pi/* /opt/node
-    $ sudo nano /etc/profile
-
-    # add these lines before *export PATH*
-    PATH="$PATH:/opt/node/bin"
-
-    $ sudo /opt/node/bin/npm install -g firmata
-
-    $ sudo /opt/node/bin/npm install -g rpio
+    $ sudo apt-get install node
+    $ sudo npm install -g firmata
+    $ sudo npm install -g rpio
     ```
+    If the *node* package is not found then add Adafruit to the package repository:
+    ```curl -sLS https://apt.adafruit.com/add | sudo bash```
 
 * Create a test script named *firmatatest.js*:
 
@@ -120,7 +113,7 @@ The RPi-ShieldBridge can be connected via USB or UART:
     // start connection to Arduino
     //  USB: /dev/ttyUSB0 or /dev/ttyACM0
     //  UART: /dev/ttyAMA0
-    var board = new firmata.Board('/dev/ttyUSB0', function(err)
+    var board = new firmata.Board('/dev/ttyAMA0', function(err)
     {
       if(err)
       {

@@ -61,6 +61,7 @@ void request() // function that runs when data is requested
     $ sudo modprobe i2c_bcm2708 baudrate=100000
     $ sudo modprobe i2c-dev
     ```
+    Note: For a Device Tree Kernel add to ```/boot/config.txt``` the following line: ```dtparam=i2c1=on``` (before any dtoverlay statement).
 
 * Install i2c-tools and python-smbus:
 
@@ -92,7 +93,7 @@ void request() // function that runs when data is requested
 
     ```
     $ gpio -g mode 18 out
-    $ gpio -g write 18 1
+    $ gpio -g write 18 0
     ```
 
 ### Shell
