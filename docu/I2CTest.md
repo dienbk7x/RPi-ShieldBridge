@@ -7,7 +7,7 @@ The I2C pins of the Raspberry Pi are connected to the AVR and the Arduino Shield
 
 ## Prepare Arduino / RPi-ShieldBridge
 
-Upload the following Sktech:
+Upload the following [Sketch](https://github.com/watterott/RPi-ShieldBridge/raw/master/docu/I2CTest.ino):
 ```
 #include <Wire.h> 
 
@@ -89,7 +89,7 @@ void request() // function that runs when data is requested
     $ exit
     ```
 
-    Or if you have installed [WiringPi](http://wiringpi.com/):
+    Or if you have installed [WiringPi](http://wiringpi.com):
 
     ```
     $ gpio -g mode 18 out
@@ -112,10 +112,10 @@ void request() // function that runs when data is requested
 
 ### Python
 
-* Create a test script named *i2ctest.py*:
+* Create a test script named [I2CTest.py](https://github.com/watterott/RPi-ShieldBridge/raw/master/docu/I2CTest.py):
 
     ```
-    $ nano i2ctest.py
+    $ nano I2CTest.py
 
     import time
     import smbus
@@ -134,5 +134,5 @@ void request() // function that runs when data is requested
 * Run the script:
 
     ```
-    $ sudo python i2ctest.py
+    $ sudo python I2CTest.py
     ```

@@ -57,21 +57,24 @@ The RPi-ShieldBridge can be connected via USB or UART:
     $ sudo pip install pyfirmata
     ```
 
-* Create a test script named *firmatatest.py*:
+* Create a test script named [Firmata.py](https://github.com/watterott/RPi-ShieldBridge/raw/master/docu/Firmata.py):
 
     ```
-    $ nano firmatatest.py
+    $ nano Firmata.py
 
     import time
     import RPi.GPIO as GPIO
     import pyfirmata
+    
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(12, GPIO.OUT)   # GPIO18 output
     GPIO.output(12, GPIO.LOW)  # GPIO18 low -> Arduino reset off
+    
     # start connection to Arduino
     #  USB: /dev/ttyUSB0 or /dev/ttyACM0
     #  UART: /dev/ttyAMA0
     board = pyfirmata.Arduino('/dev/ttyAMA0')
+    
     board.digital[13].write(1) # switch on LED
     time.sleep(3)              # 3s delay
     board.digital[13].write(0) # switch off LED
@@ -82,7 +85,7 @@ The RPi-ShieldBridge can be connected via USB or UART:
 * Run the script:
 
     ```
-    $ python firmatatest.py
+    $ python Firmata.py
     ```
 
 
@@ -98,18 +101,18 @@ The RPi-ShieldBridge can be connected via USB or UART:
     If the *node* package is not found then add Adafruit to the package repository:
     ```curl -sLS https://apt.adafruit.com/add | sudo bash```
 
-* Create a test script named *firmatatest.js*:
+* Create a test script named [Firmata.py](https://github.com/watterott/RPi-ShieldBridge/raw/master/docu/Firmata.js):
 
     ```
-    $ nano firmatatest.js
+    $ nano Firmata.js
 
     var rpio = require('rpio');
     var firmata = require('firmata');
-
+    
     // GPIO18 low -> Arduino reset off
     rpio.setOutput(12);
     rpio.write(12, rpio.LOW);
-
+    
     // start connection to Arduino
     //  USB: /dev/ttyUSB0 or /dev/ttyACM0
     //  UART: /dev/ttyAMA0
@@ -136,5 +139,5 @@ The RPi-ShieldBridge can be connected via USB or UART:
 * Run the script:
 
     ```
-    $ sudo node firmatatest.js
+    $ sudo node Firmata.js
     ```
