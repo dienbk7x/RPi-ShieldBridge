@@ -1,7 +1,7 @@
 # RPi-ShieldBridge
 Raspberry Pi to Arduino Shield Bridge.
 
-[![RPi-ShieldBridge](https://raw.github.com/watterott/RPi-ShieldBridge/master/img/rpi-shieldbridge.jpg)](http://www.watterott.com/en/RPi-ShieldBridge)
+[![RPi-ShieldBridge](https://raw.github.com/watterott/RPi-ShieldBridge/master/pcb/RPi-ShieldBridge_v11.jpg)](http://www.watterott.com/en/RPi-ShieldBridge)
 
 
 ## Shop
