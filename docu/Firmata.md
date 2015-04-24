@@ -101,7 +101,7 @@ The RPi-ShieldBridge can be connected via USB or UART:
     If the *node* package is not found then add Adafruit to the package repository:
     ```curl -sLS https://apt.adafruit.com/add | sudo bash```
 
-* Create a test script named [Firmata.py](https://github.com/watterott/RPi-ShieldBridge/raw/master/docu/Firmata.js):
+* Create a test script named [Firmata.js](https://github.com/watterott/RPi-ShieldBridge/raw/master/docu/Firmata.js):
 
     ```
     $ nano Firmata.js

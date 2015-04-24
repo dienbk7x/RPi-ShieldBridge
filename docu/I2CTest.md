@@ -66,7 +66,6 @@ void request() // function that runs when data is requested
 * Install i2c-tools and python-smbus:
 
     ```
-    $ sudo apt-get update
     $ sudo apt-get install i2c-tools
     $ sudo apt-get install python-smbus
     ```
