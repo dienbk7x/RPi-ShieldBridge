@@ -1,11 +1,11 @@
 # I2C Test
 
-A small guide to show the communication via I2C between the Arduino (RPi-ShieldBridge) and Raspberry Pi.
+A small guide to show the communication via I2C between the RPi-ShieldBridge and Raspberry Pi.
 
-The I2C pins of the Raspberry Pi are connected to the AVR and the Arduino Shield connectors (SDA+SCL) on the RPi-ShieldBridge. 
+The I2C pins of the Raspberry Pi are connected to the AVR and the Shield connectors (SDA+SCL) on the RPi-ShieldBridge. 
 
 
-## Prepare Arduino / RPi-ShieldBridge
+## Prepare RPi-ShieldBridge
 
 Upload the following [Sketch](https://github.com/watterott/RPi-ShieldBridge/raw/master/docu/I2CTest.ino):
 ```
@@ -78,7 +78,7 @@ void request() // function that runs when data is requested
 
    *The Raspberry Pi hardware revision 1 boards connect I2C bus 0 (GPIO 0 + 1) and revision 2 boards connect I2C bus 1 (GPIO 2 + 3) to the GPIO connector.*
 
-* Note: As default the reset pin of the Arduino is connected to GPIO18 (Pin 12) of the Raspberry Pi (GPIO18 high = reset on, GPIO18 low = reset off). To disable the reset:
+* Note: As default the reset pin of the AVR is connected to GPIO18 (Pin 12) of the Raspberry Pi (GPIO18 high = reset on, GPIO18 low = reset off). To disable the reset:
 
     ```
     $ sudo -i

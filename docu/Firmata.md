@@ -6,7 +6,7 @@ So you can control an Arduino with a Raspberry Pi using Firmata.
 There is a tutorial for Firmata and Raspberry Pi in [The MagPi Issue 7](http://www.themagpi.com/en/issue/7) and here is also a small guide.
 
 
-## Prepare Arduino / RPi-ShieldBridge
+## Prepare RPi-ShieldBridge
 
 * **Sketch upload with USB FTDI adapter**
   * Download and install the [Arduino IDE](http://arduino.cc/en/Main/Software) on your computer or [Raspberry Pi](https://github.com/watterott/RPi-ShieldBridge/blob/master/docu/Arduino.md).
