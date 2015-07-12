@@ -29,3 +29,4 @@ Raspberry Pi to Uno Shield Bridge.
 * [How to control the RPi-ShieldBridge with Firmata](https://github.com/watterott/RPi-ShieldBridge/blob/master/docu/Firmata.md)
 * [How to communicate with the RPi-ShieldBridge via I2C](https://github.com/watterott/RPi-ShieldBridge/blob/master/docu/I2CTest.md)
 * [How to use a MI0283QT-Adapter (2.8" Display with Touchpanel)](https://github.com/watterott/RPi-ShieldBridge/blob/master/docu/MI0283QT-Adapter.md)
+* [Nuage a Arduino Yún compatible device](http://www.arduino-hausautomation.de/nuage/)
