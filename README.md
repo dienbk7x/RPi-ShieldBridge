@@ -9,7 +9,7 @@ Raspberry Pi to Uno Shield Bridge.
 
 
 ## Features
-* Atmel AVR ATmega328 with Arduino Bootloader (optiboot)
+* Atmel AVR ATmega328 with Arduino compatible Bootloader (optiboot)
 * Raspberry Pi connected via I2C and UART (to the AVR through level-shifter)
 * AVR-Programming via Raspberry Pi possible
 * Shield connectors with Uno R3 layout
