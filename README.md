@@ -1,7 +1,7 @@
 # RPi-ShieldBridge
 Raspberry Pi to Uno Shield Bridge.
 
-[![RPi-ShieldBridge](https://raw.github.com/watterott/RPi-ShieldBridge/master/pcb/RPi-ShieldBridge_v11.jpg)](http://www.watterott.com/en/RPi-ShieldBridge)
+[![RPi-ShieldBridge](https://github.com/watterott/RPi-ShieldBridge/raw/master/hardware/RPi-ShieldBridge_v11.jpg)](http://www.watterott.com/en/RPi-ShieldBridge)
 
 
 ## Shop
@@ -20,8 +20,8 @@ Raspberry Pi to Uno Shield Bridge.
 
 
 ## Hardware
-* ![RPi-ShieldBridge hardware dia](https://raw.github.com/watterott/RPi-ShieldBridge/master/img/hw_dia.png)
-* [Schematics + Layout](https://github.com/watterott/RPi-ShieldBridge/tree/master/pcb)
+* ![RPi-ShieldBridge hardware dia](https://github.com/watterott/RPi-ShieldBridge/raw/master/img/hw_dia.png)
+* [Schematics + Layout](https://github.com/watterott/RPi-ShieldBridge/tree/master/hardware)
 
 
 ## Software
