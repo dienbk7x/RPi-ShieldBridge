@@ -14,8 +14,8 @@ How to install the Arduino IDE on the Raspberry Pi to use with the RPi-ShieldBri
 * Install [Auto-Reset for AVRdude](https://github.com/CisecoPlc/avrdude-rpi) on GPIO18 (Pin 12):
 
     ```
-    $ wget https://raw.github.com/watterott/RPi-ShieldBridge/master/docu/autoreset
-    $ wget https://raw.github.com/watterott/RPi-ShieldBridge/master/docu/avrdude-autoreset
+    $ wget https://github.com/watterott/RPi-ShieldBridge/raw/master/docu/autoreset
+    $ wget https://github.com/watterott/RPi-ShieldBridge/raw/master/docu/avrdude-autoreset
     $ chmod +x autoreset
     $ chmod +x avrdude-autoreset
     $ sudo mv autoreset /usr/bin
