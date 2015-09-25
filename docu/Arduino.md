@@ -27,19 +27,29 @@ How to install the Arduino IDE on the Raspberry Pi to use with the RPi-ShieldBri
 * [Disable Linux serial console](http://elinux.org/RPi_Serial_Connection#Preventing_Linux_using_the_serial_port):
 
     ```
-    $ sudo nano /boot/cmdline.txt
+    $ sudo raspi-config
     ```
-    Remove references to ```console=ttyAMA0,115200``` and ```kgdboc=ttyAMA0,115200```.
 
+    Select:
     ```
-    $ sudo nano /etc/inittab
+    Advanced > Disable shell and kernel messages on the serial connection.
     ```
-    Remove or comment the line ```T0:23:respawn:/sbin/getty -L ttyAMA0 115200 vt100```.
-    
+
     Reboot the system:
     ```
     $ sudo reboot
     ```
+
+  * If there are any problems the changes can also be made with nano:
+        ```
+        $ sudo nano /boot/cmdline.txt
+        ```
+        Remove references to ```console=ttyAMA0,115200``` and ```kgdboc=ttyAMA0,115200```.
+
+        ```
+        $ sudo nano /etc/inittab
+        ```
+        Remove or comment the line ```T0:23:respawn:/sbin/getty -L ttyAMA0 115200 vt100```.
 
 * Test AVRdude:
 
