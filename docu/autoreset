@@ -29,7 +29,7 @@ def process():
       if dtr.match(input):
         reset()
         return
-      elif duration > 2000:
+      elif duration > 2.0:
         return
     except:
       continue
