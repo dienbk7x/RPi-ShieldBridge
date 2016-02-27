@@ -1,11 +1,11 @@
 # RPi-ShieldBridge
-Raspberry Pi to Uno Shield Bridge.
+Raspberry Pi 1 A/B to Uno Shield Bridge.
 
 [![RPi-ShieldBridge](https://github.com/watterott/RPi-ShieldBridge/raw/master/hardware/RPi-ShieldBridge_v11.jpg)](http://www.watterott.com/en/RPi-ShieldBridge)
 
 
 ## Shop
-* [RPi-ShieldBridge for Raspberry Pi Model A and B](http://www.watterott.com/en/RPi-ShieldBridge)
+* [RPi-ShieldBridge for Raspberry Pi 1 Model A and B](http://www.watterott.com/en/RPi-ShieldBridge)
 
 
 ## Features
