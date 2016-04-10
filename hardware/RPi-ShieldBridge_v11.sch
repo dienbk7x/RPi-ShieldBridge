@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.6.0">
+<eagle version="7.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -60,9 +60,6 @@
 <layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
 <layer number="51" name="tDocu" color="7" fill="1" visible="no" active="no"/>
 <layer number="52" name="bDocu" color="7" fill="1" visible="no" active="no"/>
-<layer number="53" name="tCopper" color="7" fill="11" visible="no" active="no"/>
-<layer number="54" name="bCopper" color="7" fill="1" visible="no" active="no"/>
-<layer number="56" name="wert" color="7" fill="1" visible="no" active="no"/>
 <layer number="91" name="Nets" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="92" name="Busses" color="1" fill="1" visible="yes" active="yes"/>
 <layer number="93" name="Pins" color="2" fill="1" visible="no" active="yes"/>
@@ -71,17 +68,7 @@
 <layer number="96" name="Values" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="97" name="Info" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="98" name="Guide" color="6" fill="1" visible="yes" active="yes"/>
-<layer number="100" name="Muster" color="7" fill="1" visible="no" active="no"/>
-<layer number="217" name="217bmp" color="18" fill="1" visible="no" active="no"/>
-<layer number="218" name="218bmp" color="19" fill="1" visible="no" active="no"/>
-<layer number="219" name="219bmp" color="20" fill="1" visible="no" active="no"/>
-<layer number="220" name="220bmp" color="21" fill="1" visible="no" active="no"/>
-<layer number="221" name="221bmp" color="22" fill="1" visible="no" active="no"/>
-<layer number="222" name="222bmp" color="23" fill="1" visible="no" active="no"/>
-<layer number="223" name="223bmp" color="24" fill="1" visible="no" active="no"/>
-<layer number="224" name="224bmp" color="25" fill="1" visible="no" active="no"/>
 <layer number="250" name="Descript" color="3" fill="1" visible="yes" active="yes"/>
-<layer number="251" name="SMDround" color="12" fill="11" visible="no" active="no"/>
 </layers>
 <schematic xreflabel="%F%N/%S.%C%R" xrefpart="/%S.%C%R">
 <libraries>
@@ -14554,8 +14541,8 @@ Source: www.kingbright.com</description>
 <part name="R3" library="rcl" deviceset="R-EU_" device="R0603" value="4k7"/>
 <part name="R4" library="rcl" deviceset="R-EU_" device="R0603" value="4k7"/>
 <part name="GND9" library="supply1" deviceset="GND" device=""/>
-<part name="C2" library="rcl" deviceset="C-EU" device="C0603" value="1uF"/>
-<part name="C3" library="rcl" deviceset="C-EU" device="C0603" value="1uF"/>
+<part name="C2" library="rcl" deviceset="C-EU" device="C0603" value="2uF"/>
+<part name="C3" library="rcl" deviceset="C-EU" device="C0603" value="2uF"/>
 <part name="U1" library="Voltage-Reg" deviceset="TS5204" device="" value="TS5204-3V3"/>
 <part name="AVR" library="atmel" deviceset="MEGA8" device="-AI" value="ATmega328"/>
 <part name="GND15" library="supply1" deviceset="GND" device=""/>
@@ -14573,7 +14560,7 @@ Source: www.kingbright.com</description>
 <part name="C7" library="rcl" deviceset="C-EU" device="C0603" value="100nF"/>
 <part name="JVCC" library="jumper" deviceset="SJ" device=""/>
 <part name="ARD" library="Arduino" deviceset="UNO_ISP" device="PINS"/>
-<part name="C1" library="rcl" deviceset="C-EU" device="C0603" value="1uF"/>
+<part name="C1" library="rcl" deviceset="C-EU" device="C0603" value="2uF"/>
 <part name="OUT" library="wirepad" deviceset="WIREPAD" device="1,6/0,9" value="1"/>
 <part name="GND." library="wirepad" deviceset="WIREPAD" device="1,6/0,9" value="2"/>
 <part name="IN" library="wirepad" deviceset="WIREPAD" device="1,6/0,9" value="3"/>
@@ -14655,9 +14642,10 @@ Source: www.kingbright.com</description>
 <text x="38.1" y="167.64" size="3.81" layer="250">Arduino Connectors</text>
 <text x="104.14" y="6.985" size="1.27" layer="94" rot="R90">Pololu S7V7F5</text>
 <text x="171.45" y="64.77" size="3.81" layer="250">Level-Shifter</text>
-<text x="162.56" y="21.59" size="1.27" layer="95">Released under the Creative Commons Attribution Share-Alike License</text>
-<text x="162.56" y="19.05" size="1.27" layer="95">http://creativecommons.org/licenses/by-sa/4.0/</text>
-<text x="162.56" y="15.24" size="1.27" layer="95">Designed by Andreas Watterott (Watterott electronic)</text>
+<text x="162.56" y="22.86" size="1.27" layer="95" align="top-left">Released under the Creative Commons Attribution Share-Alike 
+License. http://creativecommons.org/licenses/by-sa/4.0/
+
+Designed by Andreas Watterott (Watterott electronic)</text>
 <text x="212.09" y="162.56" size="1.778" layer="250">Close these Jumpers for</text>
 <text x="212.09" y="160.02" size="1.778" layer="250">Arduino programming with RPi</text>
 <text x="180.34" y="76.2" size="1.778" layer="250">Close Jumper for ADS7846</text>
@@ -15907,4 +15895,10 @@ Source: www.kingbright.com</description>
 </sheets>
 </schematic>
 </drawing>
+<compatibility>
+<note version="6.3" minversion="6.2.2" severity="warning">
+Since Version 6.2.2 text objects can contain more than one line,
+which will not be processed correctly with this version.
+</note>
+</compatibility>
 </eagle>
