@@ -20,7 +20,7 @@ Raspberry Pi 1 A/B to Uno Shield Bridge.
 
 
 ## Hardware
-* ![RPi-ShieldBridge hardware dia](https://github.com/watterott/RPi-ShieldBridge/raw/master/img/hw_dia.png)
+* ![RPi-ShieldBridge hardware dia](https://github.com/watterott/RPi-ShieldBridge/raw/master/hardware/hw_dia.png)
 * [Schematics + Layout](https://github.com/watterott/RPi-ShieldBridge/tree/master/hardware)
 
 
